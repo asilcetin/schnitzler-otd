@@ -1,0 +1,15 @@
+{
+  "name": "schnitzler-otd",
+  "version": "1.0.0",
+  "description": "This twitter-bot will tweet a snippet from an entry written by Arthur Schnitzler on this day in his diary.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Asil Cetin",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "twit": "^2.2.11"
+  }
+}
