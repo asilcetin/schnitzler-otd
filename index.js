@@ -25,14 +25,13 @@ function postTweet(payload) {
   })
 
   let diaryContent = payload;
-  if (diaryContent.length > 190) diaryContent = diaryContent.slice(0, 190) + '[...]';
+  if (diaryContent.length > 215) diaryContent = diaryContent.slice(0, 215) + '[...]';
   const diaryEntryLink = config.astb.gui + yyyyJournal+'-'+mm+'-'+dd+'.xml';
-  const tweetContent = '#OTD vor 123 Jahren im Tagebuch von #ArthurSchnitzler:\n\n' + diaryContent + '\n\nWeiter: ' + diaryEntryLink;
+  const tweetContent = diaryContent + '\n\nWeiter: ' + diaryEntryLink + '\n#OTD #ArthurSchnitzler';
 
   T.post('statuses/update', {
     status: tweetContent
   }, onTweeted)
-
 }
 
 function onTweeted(err, reply) {
