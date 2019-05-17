@@ -10,7 +10,7 @@ const yyyyJournal = yyyy - 123;
 
 axios.get(config.astb.api + '/collections/editions/entry__'+yyyyJournal+'-'+mm+'-'+dd+'.xml?format=text')
   .then(response => {
-    postTweet(response.data.trim());
+    postTweet(response.data.trim().replace(/(\r\n|\n|\r)/gm, ''));
   })
   .catch(error => {
     console.log(error);
@@ -25,7 +25,7 @@ function postTweet(payload) {
   })
 
   let diaryContent = payload;
-  if (diaryContent.length > 215) diaryContent = diaryContent.slice(0, 215) + '[...]';
+  if (diaryContent.length > 218) diaryContent = diaryContent.slice(0, 218) + '[...]';
   const diaryEntryLink = config.astb.gui + yyyyJournal+'-'+mm+'-'+dd+'.xml';
   const tweetContent = diaryContent + '\n\nWeiter: ' + diaryEntryLink + '\n#OTD #ArthurSchnitzler';
 
