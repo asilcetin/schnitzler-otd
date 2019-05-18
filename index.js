@@ -10,7 +10,11 @@ const yyyyJournal = yyyy - 123;
 
 axios.get(config.astb.api + '/collections/editions/entry__'+yyyyJournal+'-'+mm+'-'+dd+'.xml?format=text')
   .then(response => {
-    postTweet(response.data.trim().replace(/(\r\n|\n|\r)/gm, ''));
+    const cleanedString = response.data
+      .trim()
+      .replace(/(\r\n|\n|\r)/gm, '')
+      .replace(/\s{2,}/g, ' ');
+    postTweet(cleanedString);
   })
   .catch(error => {
     console.log(error);
