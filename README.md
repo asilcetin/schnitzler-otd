@@ -18,3 +18,8 @@ npm install
 ```
 npm start
 ```
+### Running the bot daily
+For this project the goal is to run the script every morning at 04:00 server time. Using a cronjob like the following would do the trick:
+```
+0 4 * * * admin /usr/bin/node /{path_to_your_project}/schnitzler-otd/index.js
+```

@@ -29,7 +29,7 @@ function postTweet(payload) {
   })
 
   let diaryContent = payload;
-  if (diaryContent.length > 218) diaryContent = diaryContent.slice(0, 218) + '[...]';
+  if (diaryContent.length > 223) diaryContent = diaryContent.slice(0, 218) + '[...]';
   const diaryEntryLink = config.astb.gui + yyyyJournal+'-'+mm+'-'+dd+'.xml';
   const tweetContent = diaryContent + '\n\nWeiter: ' + diaryEntryLink + '\n#OTD #ArthurSchnitzler';
 
