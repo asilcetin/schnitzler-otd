@@ -35,7 +35,9 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-idea/
+
+# ignore .idea/ file
+.idea/
 
 # TypeScript v1 declaration files
 typings/

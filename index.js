@@ -20,6 +20,7 @@ axios.get(config.astb.api + '/collections/editions/entry__'+yyyyJournal+'-'+mm+'
     console.log(error);
   });
 
+// format and post the tweet
 function postTweet(payload) {
   const T = new Twit({
     consumer_key: config.twitter.consumer_key,
