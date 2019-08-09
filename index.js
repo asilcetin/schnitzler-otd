@@ -14,7 +14,8 @@ axios.get(config.astb.api + '/collections/editions/entry__'+yyyyJournal+'-'+mm+'
       .trim()
       .replace(/(\r\n|\n|\r)/gm, '')
       .replace(/\s{2,}/g, ' ');
-    postTweet(cleanedString);
+
+    if (cleanedString) postTweet(cleanedString);
   })
   .catch(error => {
     console.log(error);
