@@ -9,7 +9,8 @@
   "author": "Asil Cetin",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
-    "twit": "^2.2.11"
+    "axios": "^0.26.1",
+    "twit": "^2.2.11",
+    "xmldom": "^0.6.0"
   }
 }
